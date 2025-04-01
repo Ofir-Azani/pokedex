@@ -1,0 +1,152 @@
+.pokemon-card_container {
+    background-color: #A8A77A;
+    border-radius: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 175px;
+    padding: 1rem 1rem 0 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+
+    &.readonly {
+        height: 60px;
+
+        img {
+            grid-column: 2/3;
+            grid-row: 1/3;
+            max-width: 125%;
+            align-self: start;
+            justify-self: right;
+            width: 60%;
+        }
+    }
+
+    &[data-type="grass"] {
+        background-color: #789F77;
+    }
+
+    &[data-type="fire"] {
+        background-color: #D67C5A;
+    }
+
+    &[data-type="water"] {
+        background-color: #5B9DA5;
+    }
+
+    &[data-type="electric"] {
+        background-color: #C5B85B;
+    }
+
+    &[data-type="ice"] {
+        background-color: #A3D5D3;
+    }
+
+    &[data-type="fighting"] {
+        background-color: #A8706A;
+    }
+
+    &[data-type="poison"] {
+        background-color: #9A6AB3;
+    }
+
+    &[data-type="ground"] {
+        background-color: #C4A484;
+    }
+
+    &[data-type="flying"] {
+        background-color: #A6B7D4;
+    }
+
+    &[data-type="psychic"] {
+        background-color: #C27BA0;
+    }
+
+    &[data-type="bug"] {
+        background-color: #A8B755;
+    }
+
+    &[data-type="rock"] {
+        background-color: #B2A173;
+    }
+
+    &[data-type="ghost"] {
+        background-color: #7A6BAF;
+    }
+
+    &[data-type="dragon"] {
+        background-color: #8B8CC7;
+    }
+
+    &[data-type="dark"] {
+        background-color: #6C6C6C;
+    }
+
+    &[data-type="steel"] {
+        background-color: #A8A8B2;
+    }
+
+    &[data-type="fairy"] {
+        background-color: #D9AFCB;
+    }
+
+    h3 {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        grid-row: 1/2;
+        grid-column: 1/3;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 1.25rem;
+
+        button {
+            width: 32px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+        }
+
+        img {
+            width: 32px;
+            filter: grayscale();
+            opacity: 0.3;
+            transition: all 0.5 ease;
+            cursor: pointer;
+
+
+            &:hover {
+                opacity: 0.5;
+                filter: none
+            }
+        }
+
+        img.favorite {
+            opacity: 1;
+            filter: none
+        }
+    }
+
+    ul {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        list-style: none;
+        padding: 0;
+        margin: 0.25rem 0;
+        text-align: left;
+
+        li:not(:last-child) {
+            margin: 0.5rem 0;
+        }
+    }
+
+    img {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        max-width: 125%;
+        align-self: end;
+        justify-self: right;
+    }
+}

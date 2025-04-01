@@ -1,0 +1,34 @@
+.pokemoon-filters_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.pokemon-filters_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0.25rem 0
+    }
+    
+}
+
+.pokemon-filters_show-all{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    color: #007BFF;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
+    input[type="checkbox"]{
+        display: none;;
+    }   
+}

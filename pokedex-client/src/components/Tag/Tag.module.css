@@ -1,0 +1,80 @@
+.tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-weight: 400;
+    background-color: #8AC087;
+    color: #000;
+
+    &[data-type="grass"] {
+        background-color: #9ece9e;
+    }
+
+    &[data-type="fire"] {
+        background-color: #f8916b;
+        color:white;
+    }
+
+    &[data-type="water"] {
+        background-color: #7cd2dc;
+    }
+
+    &[data-type="electric"] {
+        background-color: #f6e774;
+    }
+
+    &[data-type="ice"] {
+        background-color: #cbf6f5;
+    }
+
+    &[data-type="fighting"] {
+        background-color: #e79288;
+    }
+
+    &[data-type="poison"] {
+        background-color: #6d507d;
+        color: white;
+    }
+
+    &[data-type="ground"] {
+        background-color: #e7bb90;
+    }
+
+    &[data-type="flying"] {
+        background-color: #c8d9f5;
+    }
+
+    &[data-type="psychic"] {
+        background-color: #f281bc;
+        color:white;
+    }
+
+    &[data-type="bug"] {
+        background-color: #def26b;
+    }
+
+    &[data-type="rock"] {
+        background-color: #e8d5a4;
+    }
+
+    &[data-type="ghost"] {
+        background-color: #9b87e6;
+        color: white;
+    }
+
+    &[data-type="dragon"] {
+        background-color: #989af1;
+        color: white;
+    }
+
+    &[data-type="dark"] {
+        background-color: #424040;
+    }
+
+    &[data-type="steel"] {
+        background-color: #c9c9d5;
+    }
+
+    &[data-type="fairy"] {
+        background-color: #f5cbe7;
+    }
+}

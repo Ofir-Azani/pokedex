@@ -1,0 +1,10 @@
+.favorite-pokemons_grid{
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    height: 10%;
+
+    li{
+        margin: 1rem 0
+    }
+}

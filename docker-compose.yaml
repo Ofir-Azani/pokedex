@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pokedex
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./pokedex-server/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pokedex-server: 
+    build: 
+      context: ./pokedex-server
+    depends_on:
+      - db
+    container_name: pokedex-server
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/pokedex
+
+  pokedex-client: 
+    build: 
+      context: ./pokedex-client
+    depends_on:
+      - pokedex-server
+    container_name: pokedex-client
+    ports:
+      - "5173:5173"
+    environment: 
+      VITE_API_PROXY: http://pokedex-server:3000
+
+volumes:
+  pgdata:
