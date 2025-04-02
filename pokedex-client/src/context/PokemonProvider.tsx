@@ -66,11 +66,18 @@ export const PokemonProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const fetchPokemons = async () => {
-            const pokemonResponse = await fetch(POKE_API);
-            const pokemonDetails = await pokemonResponse.json();
-
-            setPokemons(pokemonDetails);
-            setVisiblePokemons(pokemonDetails)
+            try{
+                const pokemonResponse = await fetch(POKE_API);
+                const pokemonDetails = await pokemonResponse.json();
+    
+                setPokemons(pokemonDetails);
+                setVisiblePokemons(pokemonDetails);
+            }
+            catch (err) {
+                console.error('No pokemon were found', err);
+                setPokemons([]);
+                setVisiblePokemons([]);
+            }
         }
 
         const fetchFavorites = async () => {
@@ -86,7 +93,8 @@ export const PokemonProvider = ({ children }: { children: ReactNode }) => {
                     }
                 })
             } else {
-                //fetch
+                //fetch logic goes here
+                return {};
             }
         }
         fetchPokemons();
